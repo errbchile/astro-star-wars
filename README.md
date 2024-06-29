@@ -3,7 +3,7 @@
 https://astro.build/
 
 ```sh
-npm run install
+npm install
 ```
 
 ```sh
