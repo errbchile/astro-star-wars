@@ -1,0 +1,14 @@
+---
+import CharactersSelection from "../components/CharactersSelection";
+import ImageCards from "../components/ImageCards";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home page">
+  <ImageCards client:visible />
+  <div class="flex flex-col md:flex-row flex-grow">
+    <div class="w-full md:w-1/2 p-4">
+      <CharactersSelection client:visible />
+    </div>
+  </div>
+</Layout>
