@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { client } from "../store/tanstackQueryStore";
+import { QueryClient } from "@tanstack/query-core";
+
+export const client = new QueryClient();
 
 // fetch
 async function getImages() {
@@ -11,10 +13,13 @@ async function getImages() {
 
 // tanstack-query
 export const useCharactersList = () => {
-  const response = useQuery({
-    queryKey: ["characters-list"],
-    queryFn: getImages,
-  }, client);
+  const response = useQuery(
+    {
+      queryKey: ["characters-list"],
+      queryFn: getImages,
+    },
+    client
+  );
 
   return response;
 };
